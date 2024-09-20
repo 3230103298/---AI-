@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI定制香水</title>
+    <style>
+        /* 基本样式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3;
+            color: #333;
+        }
+        
+        header {
+            background-color: #4A90E2;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 50px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        
+        nav a:hover {
+            text-decoration: underline;
+        }
+        
+        .banner {
+            background-image: url('https://example.com/banner.jpg');
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        
+        .banner h1 {
+            font-size: 50px;
+            margin: 0;
+        }
+        
+        .banner p {
+            font-size: 20px;
+        }
+        
+        .section {
+            padding: 50px;
+            text-align: center;
+        }
+        
+        .section h2 {
+            margin-bottom: 30px;
+        }
+        
+        .options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .option {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            width: 150px;
+            transition: transform 0.3s ease;
+        }
+        
+        .option:hover {
+            transform: scale(1.05);
+        }
+        
+        .recommendation {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: left;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        footer a {
+            color: #4A90E2;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 头部导航 -->
+    <header>
+        <nav>
+            <div><a href="#">AI定制香水</a></div>
+            <div>
+                <a href="#">主页</a>
+                <a href="#">定制香水</a>
+                <a href="#">联系我们</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 横幅 -->
+    <section class="banner">
+        <h1>定制属于你的专属香水</h1>
+        <p>通过AI选择你的个性香味</p>
+    </section>
+
+    <!-- 定制流程 -->
+    <section class="section">
+        <h2>选择你的香味偏好</h2>
+        <div class="options">
+            <div class="option" onclick="showRecommendation('花香')">花香</div>
+            <div class="option" onclick="showRecommendation('木香')">木香</div>
+            <div class="option" onclick="showRecommendation('果香')">果香</div>
+        </div>
+        <div class="recommendation" id="recommendation">
+            <h3>AI推荐的香水</h3>
+            <p id="recommendation-text"></p>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>联系我们：info@aiperfume.com</p>
+        <p>© 2024 AI定制香水 | <a href="#">隐私政策</a></p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function showRecommendation(preference) {
+            const recommendationText = document.getElementById('recommendation-text');
+            const recommendationBox = document.getElementById('recommendation');
+
+            if (preference === '花香') {
+                recommendationText.textContent = "我们推荐带有玫瑰、茉莉和依兰依兰的香水。";
+            } else if (preference === '木香') {
+                recommendationText.textContent = "我们推荐带有檀香木、雪松和广藿香的香水。";
+            } else if (preference === '果香') {
+                recommendationText.textContent = "我们推荐带有柑橘、桃子和香梨的香水。";
+            }
+
+            recommendationBox.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
