@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI定制香水</title>
     <style>
-        /* 基本样式 */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -38,7 +37,7 @@
         }
         
         .banner {
-            background-image: url('https://example.com/banner.jpg');
+            background-image: url('https://example.com/banner.jpg'); /* 替换为你的图片链接 */
             background-size: cover;
             color: white;
             text-align: center;
@@ -92,6 +91,47 @@
             text-align: left;
         }
         
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .gallery img {
+            width: 200px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        .form-section {
+            background-color: #eef;
+            padding: 50px;
+            text-align: center;
+        }
+
+        form input, form textarea, form button {
+            padding: 10px;
+            margin: 10px 0;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        form button {
+            background-color: #4A90E2;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #357ABD;
+        }
+
         footer {
             background-color: #333;
             color: white;
@@ -107,25 +147,23 @@
 </head>
 <body>
 
-    <!-- 头部导航 -->
     <header>
         <nav>
             <div><a href="#">AI定制香水</a></div>
             <div>
                 <a href="#">主页</a>
                 <a href="#">定制香水</a>
+                <a href="#">关于我们</a>
                 <a href="#">联系我们</a>
             </div>
         </nav>
     </header>
 
-    <!-- 横幅 -->
     <section class="banner">
         <h1>定制属于你的专属香水</h1>
         <p>通过AI选择你的个性香味</p>
     </section>
 
-    <!-- 定制流程 -->
     <section class="section">
         <h2>选择你的香味偏好</h2>
         <div class="options">
@@ -139,13 +177,32 @@
         </div>
     </section>
 
-    <!-- 页脚 -->
+    <!-- 新增：香水展示图片廊 -->
+    <section class="section">
+        <h2>我们的香水系列</h2>
+        <div class="gallery">
+            <img src="https://example.com/perfume1.jpg" alt="香水1">
+            <img src="https://example.com/perfume2.jpg" alt="香水2">
+            <img src="https://example.com/perfume3.jpg" alt="香水3">
+            <img src="https://example.com/perfume4.jpg" alt="香水4">
+        </div>
+    </section>
+
+    <!-- 新增：用户反馈表单 -->
+    <section class="form-section">
+        <h2>告诉我们你的香水偏好</h2>
+        <form id="preference-form">
+            <input type="text" placeholder="你的名字" required>
+            <textarea placeholder="你喜欢的香味" required></textarea>
+            <button type="submit">提交</button>
+        </form>
+    </section>
+
     <footer>
         <p>联系我们：info@aiperfume.com</p>
         <p>© 2024 AI定制香水 | <a href="#">隐私政策</a></p>
     </footer>
 
-    <!-- JavaScript -->
     <script>
         function showRecommendation(preference) {
             const recommendationText = document.getElementById('recommendation-text');
@@ -161,6 +218,12 @@
 
             recommendationBox.style.display = 'block';
         }
+
+        // 表单提交功能
+        document.getElementById('preference-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('谢谢你的反馈！');
+        });
     </script>
 
 </body>
